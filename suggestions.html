@@ -58,12 +58,34 @@
             <li id="li1"><a class="active" href="suggestions.html">Suggestions</a></li>
         </ul>
         <center>
+	    <form action="" method="post">
+            Does your song request belong in an album?
+	    <br />
+	    <br />
+	    <input type="radio" id="option1" name="radio_options" value="option1">
+	    Yes
+	    <br />
+            <input type="radio" id="option2" name="radio_options" value="option2">
+	    No
+	    <br />
+	    </form>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+        $("#option2").click(function() {
+            $("#album").prop("required", false);
+            $("#album").prop("disabled", true);
+        });
+        $("#option1").click(function() {
+            $("#album").prop("required", true);
+            $("#album").prop("disabled", false);
+        });
+    </script>
             <font size="+2">Song Suggestions</font>
 	        <form class="form-style" method="POST" action="https://formspree.io/williamsjpoms.6a@gmail.com.com">
                 <input type="email" class="inputsize" name="Email" required="true" placeholder="Your email"><br><br>
                 <input type="text" class="inputsize" autocapitalize="words" name="Name" required="true" placeholder="Name"><br><br>
                 <input type="text" class="inputsize" name="Artist" required="true" placeholder="Artist"><br><br>
-	        <input type="text" class="inputsize" autocapitalize="sentances" name="Album(s)" required="false" placeholder="Album(s)"><br><br>
+	        <input type="text" class="inputsize" autocapitalize="sentances" id="album" name="Album(s)" required="false" placeholder="Album(s)"><br><br>
 	        <input type="text" class="inputsize2" autocapitalize="sentances" name="Song(s)" required="false" placeholder="Song(s)"><br><br>
                 <button type="submit" name="submit" id="submit">Submit</button><br>
 	        </form>
