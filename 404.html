@@ -2,52 +2,101 @@
 permalink: /404.html
 ---
 <html>
-<head>
-<title>Unknown URL</title>
-<style>
-#main1 {
-width: 100%;
-height: 550px;
-margin: auto;
-background-color: #ffffff;
-box-shadow: 7px 8px 8px rgba(204, 204, 204, 1);
-text-align: center;
-}
-#main-404 {
-font-size: 3em;
-text-align: center;
-}
-#main-notice {
-width: 100%;
-}
-#main-description {
-color: #bbbbbb;
-font-size: 2.5em;
-display: inline-block;
-}
-#main-apology {
-color: #bababa;
-font-size: 2.5em;
-text-align: inline-block;
-}
-</style>
-</head>
-<body>
-<div id="main1">
-<br />
-<div id="main-404">
-<p>404 Error - Requested URL not found</p>
-</div>
-<br />
-<br />
-<div id="main-notice">
-<div id="main-description">
-<a>This page either does not exist or has been moved to another site. Please click the back button or return to our </a>
-<a class="home-page" href="https://pixlperfect01.github.io/freemusic">home page</a>
-<a>.</a>
-</div>
-<div id="main-apology">
-<a>We apologize for the inconvenience</a>
-</div>
-</div>
-</div>
+  <head>
+    <title>Unknown URL</title>
+    <style>
+      #main-error {
+        width: 100%;
+        height: 550px;
+        margin: auto;
+        background-color: #ffffff;
+        box-shadow: 7px 8px 8px rgba(204, 204, 204, 1);
+        text-align: center;
+      }
+      #main-404 {
+        font-size: 2.6em;
+        text-align: center;
+      }
+      #main-notice {
+        width: 100%;
+      }
+      #main-description {
+        color: #bbbbbb;
+        font-size: 2.25em;
+        display: inline-block;
+      }
+      #main-apology {
+        color: #bababa;
+        font-size: 2.25em;
+        text-align: inline-block;
+      }
+      #spacing {
+        width: 100%;
+        height: 180px;
+      }
+      #main-report {
+        width: 100%;
+        height: 750px;
+        margin: auto;
+        background-color: #cccccc;
+        text-align: center;
+        border-color: darkblue;
+        border-style: solid;
+        border-size: 4px;
+        border-radius: 7px;
+      }
+      #main-report-title {
+        display: inline-block;
+        font-size: 3em;
+      }
+      #main-report-instructions {
+        display: inline-block;
+        font-size: 1em;
+        color: #ff00cc;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="main">
+      <div id="main-error">
+        <br />
+        <div id="main-404">
+          <p>404 Error - Requested URL not found</p>
+        </div>
+        <br />
+        <br />
+        <div id="main-notice">
+          <div id="main-description">
+            <a>This page either does not exist or has been moved to another site. Please click the back button or return to our </a>
+            <a class="home-page" href="https://pixlperfect01.github.io/freemusic">home page</a>
+            <a>.</a>
+          </div>
+          <div id="main-apology">
+            <a>We apologize for the inconvenience</a>
+          </div>
+        </div>
+      </div>
+      <div id="main-report">
+        <br />
+        <div id="main-report-title">
+          <p>Report Your Error</p>
+        </div>
+        <br />
+        <div id="main-report-instructions">
+          <p>Please enter the current url and the url of the page that brought you here</p>
+        </div>
+        <div id="main-report-form">
+          <form action="https://formspree.io/williamsjpoms.6a@gmail.com">
+            <p id="main-report-form-label">Enter your current url</p>
+            <input type="url" name="404 error (current url)" id="main-report-form-input" placeholder="Current url" required="true">
+            <p id="main-report-form-label">Enter the url of the page that brought you here</p>
+            <input type="url" name="404 error (former url)" id="main-report-form-input" placeholder="Former url" required="true">
+            <p id="main-report-form-label">Suspected cause of error</p>
+            <textarea rows="5" cols="30" maxlength="150" name="suspected cause of error" id="main-report-form-textarea" placeholder="Suspected cause of error" required="false" />
+            <button type="submit" id="main-report-form-submit">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
