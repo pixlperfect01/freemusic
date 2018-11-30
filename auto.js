@@ -1,15 +1,24 @@
-var mandrill = require('node-mandrill')('<your API Key>'); 
-
-function sendEmail ( _name, _email, _subject, _message) {
-    mandrill('/messages/send', {
-        message: {
-            to: [{email: _email , name: _name}],
-            from_email: 'noreply@yourdomain.com',
-            subject: _subject,
-            text: _message
+function sendMail() {
+    $.ajax({
+      type: 'POST',
+      url: 'https://mandrillapp.com/api/1.0/messages/send.json',
+      data: {
+        'key': 'YOUR API KEY HERE',
+        'message': {
+          'from_email': 'YOUR@EMAIL.HERE',
+          'to': [
+              {
+                'email': 'RECIPIENT@EMAIL.HERE',
+                'name': 'RECIPIENT NAME (OPTIONAL)',
+                'type': 'to'
+              }
+            ],
+          'autotext': 'true',
+          'subject': 'YOUR SUBJECT HERE!',
+          'html': 'YOUR EMAIL CONTENT HERE! YOU CAN USE HTML!'
         }
-    }, function(error, response){
-        if (error) console.log( error );
-        else console.log(response);
-    });
+      }
+     }).done(function(response) {
+       console.log(response); // if you're into that sorta thing
+     });
 }
